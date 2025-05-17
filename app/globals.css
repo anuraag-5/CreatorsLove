@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background-color: #140b0f;
+  color: white;
+  overflow-x: hidden;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .bg-conic {
+    background-image: conic-gradient(
+      from 0deg at right bottom,
+      #511d4b,
+      #140b0f,
+      #140b0f,
+      #140b0f,
+      #140b0f,
+      #140b0f,
+      #140b0f,
+      #140b0f,
+      #511d4b
+    );
   }
 }
+.bg-my-conic {
+  background-image: conic-gradient(
+    from 0deg at bottom,
+    #511d4b,
+    #140b0f,
+    #140b0f,
+    #140b0f,
+    #140b0f,
+    #140b0f,
+    #140b0f,
+    #140b0f,
+    #511d4b
+  );
+}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.fullwh {
+  min-width: 100vw;
+  min-height: 100vh;
 }

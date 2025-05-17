@@ -91,7 +91,7 @@ const Navbar = () => {
                 duration: 0.4,
               }}
             >
-              HOME
+              Home
             </motion.a>
             <motion.a
               className="text-5xl mb-9 cursor-pointer"
@@ -108,7 +108,7 @@ const Navbar = () => {
                 duration: 0.4,
               }}
             >
-              PROJECTS
+              Projects
             </motion.a>
             <motion.a
               className="text-5xl mb-9 cursor-pointer"
@@ -125,7 +125,7 @@ const Navbar = () => {
                 duration: 0.4,
               }}
             >
-              CONTACT
+              Contact
             </motion.a>
           </motion.div>
         ) : null}

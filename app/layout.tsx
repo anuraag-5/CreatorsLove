@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import "./globals.css";
+import { AnimatePresence } from "motion/react";
 
 const nMachina = localFont({
-  src: './fonts/NeueMachina-Regular.otf',
-  variable: "--nMachina"
-})
+  src: "./fonts/NeueMachina-Regular.otf",
+  variable: "--nMachina",
+});
 
 export const metadata: Metadata = {
   title: "CreatorsLove",
@@ -19,10 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${nMachina.className} antialiased`}
-      >
-        {children}
+      <body className={`${nMachina.className} antialiased`}>
+        <AnimatePresence mode="wait">{children}</AnimatePresence>
       </body>
     </html>
   );

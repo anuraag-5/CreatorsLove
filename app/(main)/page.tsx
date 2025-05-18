@@ -19,13 +19,12 @@ const Page = () => {
 
   useGSAP(
     (_, contextSafe) => {
-
-      gsap.to(ref3.current,{
+      gsap.to(ref3.current, {
         y: -15,
         duration: 1.5,
         yoyo: true,
-        repeat: -1
-      })
+        repeat: -1,
+      });
 
       if (!ref2.current || !contextSafe) return;
 
@@ -76,60 +75,58 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-between p-4 md:p-14 fullwh bg-conic relative">
+      <motion.div
+        className="flex flex-col justify-between p-4 md:p-14 fullwh bg-conic relative"
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 3,
+        }}
+      >
         <Navbar />
-        <AnimatePresence>
-          <motion.div
-            className="relative"
-            key="front"
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.2,
-            }}
-          >
-            <div
-              className=" text-[24px] md:text-[45px] xl:text-[84px] w-fit tracking-wider"
-              ref={ref1}
-            >
-              Creatorslove
-            </div>
-            <svg
-              className={`absolute top-[-49px] md:top-[-16px] xl:top-9`}
-              style={{ width }}
-              ref={ref2}
-            >
-              <path
-                d={`M 0 80 Q ${width / 2} 80 ${width} 80`}
-                stroke="white"
-                fill="transparent"
-              />
-            </svg>
-            <div
-              className="flex justify-between items-center w-fit pl-3 border-[#ff66c4] border-[1px] mt-16 cursor-pointer"
-              onClick={() => {}}
-            >
-              <div className=" text-[12px] text-[#ff66c4] mr-5 tracking-wider md:text-[16px]">
-                Get Started
-              </div>
-              <Image
-                src="/arrow-right-s-line.svg"
-                alt="Click"
-                width={30}
-                height={30}
-              />
-            </div>
-          </motion.div>
+        <motion.div className="relative" key="front">
           <div
-            ref={ref3}
-            className="text-[#ff66c4] flex flex-col items-center md:text-[18px]"
-            key="username"
+            className=" text-[24px] md:text-[45px] xl:text-[84px] w-fit tracking-wider"
+            ref={ref1}
           >
-            <motion.div
+            Creatorslove
+          </div>
+          <svg
+            className={`absolute top-[-49px] md:top-[-16px] xl:top-9`}
+            style={{ width }}
+            ref={ref2}
+          >
+            <path
+              d={`M 0 80 Q ${width / 2} 80 ${width} 80`}
+              stroke="white"
+              fill="transparent"
+            />
+          </svg>
+          <div
+            className="flex justify-between items-center w-fit pl-3 border-[#ff66c4] border-[1px] mt-16 cursor-pointer"
+            onClick={() => {}}
+          >
+            <div className=" text-[12px] text-[#ff66c4] mr-5 tracking-wider md:text-[16px]">
+              Get Started
+            </div>
+            <Image
+              src="/arrow-right-s-line.svg"
+              alt="Click"
+              width={30}
+              height={30}
+            />
+          </div>
+        </motion.div>
+        <div
+          ref={ref3}
+          className="text-[#ff66c4] flex flex-col items-center md:text-[18px]"
+          key="username"
+        >
+          <motion.div
             initial={{
               opacity: 0,
             }}
@@ -139,27 +136,17 @@ const Page = () => {
             transition={{
               duration: 0.2,
             }}
-            >
-              Scroll Down
-            </motion.div>
-            <motion.img
+          >
+            Scroll Down
+          </motion.div>
+          <motion.img
             src="/arrow-down-pink.svg"
             alt="arrow"
             width={100}
             height={100}
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.2,
-            }} 
-            />
-          </div>          
-        </AnimatePresence>
-      </div>
+          />
+        </div>
+      </motion.div>
       <SlidingInOut />
     </>
   );

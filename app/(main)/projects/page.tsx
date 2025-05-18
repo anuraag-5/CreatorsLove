@@ -1,9 +1,13 @@
-import React from 'react'
+"use client";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div
+      
+    >
+      ProjectsPage
+    </div>
+  );
+};
 
-export default page
+export default page;

@@ -4,10 +4,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import SlidingInOut from "@/components/SlidingInOut";
+import SlidingText from "@/components/SlidingText";
+import SYPF from "@/components/SYPF";
 
 gsap.registerPlugin(useGSAP);
 
@@ -76,7 +77,7 @@ const Page = () => {
   return (
     <>
       <motion.div
-        className="flex flex-col justify-between p-4 md:p-14 fullwh bg-conic relative"
+        className="flex flex-col justify-between p-4 md:p-14 fullwh bg-conic"
         initial={{
           opacity: 0,
         }}
@@ -147,7 +148,9 @@ const Page = () => {
           />
         </div>
       </motion.div>
+      <SlidingText />
       <SlidingInOut />
+      <SYPF />
     </>
   );
 };

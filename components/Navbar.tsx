@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
 import TransitionLink from "./TransitionLink";
 
@@ -21,7 +20,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="w-full flex justify-between sticky top-5 md:top-14 z-10">
+      <div className="w-full flex justify-between sticky top-0 md:top-14 z-10">
         <Link href="/">
           <Image
             src="/creatorslove.svg"
@@ -30,7 +29,6 @@ const Navbar = () => {
             height={35}
           />
         </Link>
-        <AnimatePresence mode="wait">
           {!isOpenMenu ? (
             <motion.img
               src="/menu-line.svg"
@@ -62,13 +60,12 @@ const Navbar = () => {
               transition={{ duration: 0.4, ease: "easeIn" }}
             />
           )}
-        </AnimatePresence>
       </div>
 
       {isOpenMenu ? (
         <motion.div
           key="menu"
-          className="absolute top-0 right-0 left-0 bottom-0 bg-[rgba(0, 0, 0, 0.7)] backdrop-blur-sm z-9 flex flex-col justify-center items-center"
+          className="absolute min-h-screen min-w-screen top-0 left-0 bg-[rgba(0, 0, 0, 0.7)] backdrop-blur-sm z-9 flex flex-col justify-center items-center gap-12"
           initial={{
             opacity: 0,
           }}
@@ -83,7 +80,7 @@ const Navbar = () => {
           }}
         >
           <motion.a
-            className="text-5xl mb-9 cursor-pointer"
+            className="text-5xl cursor-pointer"
             onClick={handleMenuClick}
             initial={{
               opacity: 0,
@@ -100,13 +97,13 @@ const Navbar = () => {
             Home
           </motion.a>
           <TransitionLink
-            className="text-5xl mb-9 cursor-pointer"
+            className="text-5xl cursor-pointer"
             href="/projects"
           >
             Projects
           </TransitionLink>
           <TransitionLink
-            className="text-5xl mb-9 cursor-pointer"
+            className="text-5xl cursor-pointer"
             href="/contact"
           >
             Contact

@@ -53,7 +53,7 @@ const SYPF = () => {
   );
 
   return (
-    <div className="fullwh relative flex flex-col justify-center items-center" ref={ref1}>
+    <div className="fullwh relative flex flex-col justify-center items-center overflow-x-hidden" ref={ref1}>
       <div className="text-9xl absolute top-20 left-50">
         Sell
       </div>
